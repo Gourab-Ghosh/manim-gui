@@ -7,7 +7,14 @@ if not os.path.exists(MANIM_GUI_CONFIG_DIR):
 DEFAULT_FONT = ("algerian", 11)
 
 def import_module_from_path(module_full_path):
-	return importlib.util.spec_from_file_location(os.path.splitext(os.path.split(module_full_path)[1])[0], module_full_path).loader.load_module()
+	return importlib.util.spec_from_file_location(
+		os.path.splitext(
+			os.path.split(
+				module_full_path
+				)[1]
+			)[0],
+		module_full_path,
+		).loader.load_module()
 
 def get_file_dir(file_path):
 	file_dir, file_name = os.path.split(file_path)
@@ -32,7 +39,31 @@ def access_manim_gui_directory_files(file_name , operation, text = "", makedirs 
 			file.write(text)
 
 def verify_manim_directory(manim_path):
-	return all([os.path.isfile(os.path.abspath(os.path.join(manim_path, "manimlib", file))) for file in ("constants.py", "extract_scene.py", "config.py")]) and os.path.isfile(os.path.abspath(os.path.join(manim_path, "manim.py")))
+	return all(
+		[
+			os.path.isfile(
+				os.path.abspath(
+					os.path.join(
+						manim_path,
+						"manimlib",
+						file,
+						)
+					)
+				)
+			for file in (
+				"constants.py",
+				"extract_scene.py",
+				"config.py",
+				)
+			]
+		) and os.path.isfile(
+			os.path.abspath(
+				os.path.join(
+					manim_path,
+					"manim.py",
+					)
+				)
+			)
 
 def get_manim_directory():
 	manim_path = access_manim_gui_directory_files("manim_location", "read", makedirs = False)

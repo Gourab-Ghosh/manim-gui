@@ -32,8 +32,27 @@ padx = pady = 10
 
 MANIM_DIR = get_manim_directory()
 
-main_frame = MainFrame(root, text = "Manim Rendering GUI", add_kwargs = dict(padx = padx, pady = pady, fill = tk.BOTH, expand = 1))
-edit_default_frame = EditDefaultFrame(root, main_frame, text = "Manim GUI default configurations", add_kwargs = dict(padx = padx, pady = pady, fill = tk.BOTH, expand = 1))
+main_frame = MainFrame(
+	root,
+	text = "Manim Rendering GUI",
+	add_kwargs = dict(
+		padx = padx,
+		pady = pady,
+		fill = tk.BOTH,
+		expand = 1,
+		),
+	)
+edit_default_frame = EditDefaultFrame(
+	root,
+	main_frame,
+	text = "Manim GUI default configurations",
+	add_kwargs = dict(
+		padx = padx,
+		pady = pady,
+		fill = tk.BOTH,
+		expand = 1,
+		),
+	)
 
 if MANIM_DIR == None:
 	main_frame.MANIM_DIR_NOT_SET_MSG_LABEL["text"] = "Default Manim directoty path is either not set or the path do not exists. Edit the path to enable rendering options."

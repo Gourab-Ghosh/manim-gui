@@ -352,18 +352,3 @@ class MainFrame(ModifiedFrame):
 			self.rendering_status_label["foreground"] = "green"
 			self.rendering_status_label["text"] = "Finished Rendering"
 		self.time_label["text"] = render_time
-
-
-
-# dir(locals()["__builtins__"]) -> Errors
-
-# To edit -> colour handling, height width live update
-
-
-
-# Jadavpur login id -> 25084001111162
-# Jadavpur application no. mathematics -> JUBSC082503006752
-# Jadavpur application no. physics -> JUBSC082501006774
-# Vidyamandira application number -> 2020MTMA07804
-# ["transparent + bg_colour"]
-# ["file_name + browse", "scenes", "start_number + end_number", "output_type + transparent + bg_colour", "output_quality", "play + progress_bars", "output_name", "output_path"]
